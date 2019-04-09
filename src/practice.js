@@ -55,4 +55,5 @@ function mostPopularVideosForDays(days) {
 
 paginateProducts(2);
 
+
 console.log('connection successful');
