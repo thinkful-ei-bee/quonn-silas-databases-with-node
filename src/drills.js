@@ -40,7 +40,7 @@ function paginateResults(pageNumber) {
 // Get all items added after date
 function getAfterDate(daysAgo) {
   knexInstance
-    .select('date_added')
+    .select('name', 'price', 'category', 'checked', 'date_added')
     .from('shopping_list')
     .where('date_added', '>', 
       knexInstance.raw('now() - \'?? days\'::INTERVAL', daysAgo))
