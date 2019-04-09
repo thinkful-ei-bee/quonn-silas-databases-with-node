@@ -3,12 +3,12 @@ CREATE TABLE IF NOT EXISTS shopping_list (
   item_name TEXT,
   price DECIMAL,
   date_added TIMESTAMP DEFAULT now(),
-  checked BIT DEFAULT 0 NOT NULL,
+  checked BOOLEAN DEFAULT false NOT NULL,
   category grocery NOT NULL
 );
 
 DROP TYPE IF EXISTS grocery;
-CREATE TYPE grocery (
+CREATE TYPE grocery AS ENUM(
   'Main',
   'Snack',
   'Lunch',
